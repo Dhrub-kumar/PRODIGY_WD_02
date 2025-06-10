@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Smartwatch Stopwatch</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    Smartwatch Stopwatch
+  </header>
+
+  <main>
+    <section class="smartwatch" aria-label="Smartwatch stopwatch">
+      <div class="glass-overlay" aria-hidden="true"></div>
+
+      <div
+        class="stopwatch-display"
+        id="display"
+        role="timer"
+        aria-live="polite"
+        aria-atomic="true"
+        aria-label="Elapsed time"
+      >
+        00:00.000
+      </div>
+
+      <section class="health-metrics" aria-label="Health metrics">
+        <article
+          class="metric-card"
+          role="region"
+          aria-live="polite"
+          aria-atomic="true"
+          aria-label="Current heart rate"
+        >
+          <h3>Heart Rate</h3>
+          <div>
+            <span class="metric-value" id="heartRateValue">--</span
+            ><span class="metric-unit">bpm</span>
+          </div>
+        </article>
+        <article
+          class="metric-card"
+          role="region"
+          aria-live="polite"
+          aria-atomic="true"
+          aria-label="Current SpO2"
+        >
+          <h3>SpO₂</h3>
+          <div>
+            <span class="metric-value" id="spo2Value">--</span
+            ><span class="metric-unit">%</span>
+          </div>
+        </article>
+      </section>
+
+      <section
+        class="controls"
+        role="region"
+        aria-label="Stopwatch controls"
+      >
+        <button
+          id="startStopBtn"
+          aria-pressed="false"
+          aria-controls="display"
+          aria-label="Start or pause stopwatch"
+          title="Start/Pause"
+        >
+          <svg viewBox="0 0 24 24" fill="none">
+            <polygon points="5 3 19 12 5 21" />
+          </svg>
+        </button>
+
+        <button
+          id="lapBtn"
+          disabled
+          aria-label="Record lap time"
+          title="Lap"
+        >
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M5 3v18" />
+            <path d="M5 3c4 1.5 7 1 9 0 2-1 4 0 6 2v14" />
+          </svg>
+        </button>
+
+        <button
+          id="resetBtn"
+          disabled
+          aria-label="Reset stopwatch"
+          title="Reset"
+        >
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 5v-2a8 8 0 1 0 8 8h-2" />
+            <polyline points="12 3 12 8 15 5" />
+          </svg>
+        </button>
+      </section>
+    </section>
+
+    <section class="laps-container" aria-label="Lap times">
+      <h2>Lap Times</h2>
+      <ol class="lap-list" id="laps"></ol>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
