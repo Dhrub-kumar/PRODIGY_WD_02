@@ -39,7 +39,7 @@
     startTime = Date.now() - elapsedTime;
     timerInterval = setInterval(() => {
       updateDisplay();
-    }, 31); // ~30 fps for smoothness
+    }, 31); 
     running = true;
     startStopBtn.setAttribute('aria-pressed', 'true');
     updateStartStopIcon(true);
@@ -73,7 +73,7 @@
     lapsList.prepend(li);
   }
 
-  // Toggle start/pause icon
+  
   function updateStartStopIcon(isRunning) {
     if (!startStopBtn) return;
     startStopBtn.innerHTML = isRunning
@@ -97,7 +97,7 @@
 
   resetBtn.addEventListener('click', reset);
 
-  // Simulate Heart Rate and SpO2
+  
   function randomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
